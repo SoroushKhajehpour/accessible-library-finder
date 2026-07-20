@@ -6,4 +6,5 @@
 /web/sites/default/settings.local.php
 /.ddev/.global_commands/
 /.phpunit.result.cache
+/.phpunit.cache/
 .DS_Store

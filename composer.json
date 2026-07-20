@@ -100,5 +100,20 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+        "drupal/coder": "^8.3",
+        "drupal/core-dev": "^11.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\library_status\\": "web/modules/custom/library_status/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\library_status\\": "web/modules/custom/library_status/tests/src/"
+        }
     }
 }
