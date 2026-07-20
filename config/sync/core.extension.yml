@@ -44,4 +44,6 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  library_accessible: 0
 profile: standard

@@ -1,0 +1,349 @@
+/**
+ * @file
+ * Minimal accessible styles for Library Accessible.
+ */
+
+:root {
+  --la-bg: #f7f7f5;
+  --la-surface: #ffffff;
+  --la-text: #1a1a1a;
+  --la-muted: #333333;
+  --la-border: #5c5c5c;
+  --la-link: #0b4f8a;
+  --la-link-hover: #083963;
+  --la-focus: #0b4f8a;
+  --la-focus-ring: #ffbf47;
+  --la-available: #0b5b2c;
+  --la-unavailable: #8a1c1c;
+  --la-max-width: 68rem;
+  --la-measure: 65ch;
+  --la-space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--la-bg);
+  color: var(--la-text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--la-space);
+  top: -100px;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: var(--la-surface);
+  color: var(--la-text);
+  border: 2px solid var(--la-border);
+  text-decoration: underline;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: var(--la-space);
+}
+
+a {
+  color: var(--la-link);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--la-link-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--la-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--la-focus-ring);
+}
+
+/* Keep a visible focus treatment even when :focus-visible is unsupported. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.layout-container {
+  width: min(100% - 2rem, var(--la-max-width));
+  margin-inline: auto;
+  padding-block: var(--la-space) 2.5rem;
+}
+
+.site-header,
+.site-footer,
+.highlighted-region,
+.breadcrumb-region,
+.main-content,
+.sidebar {
+  background: var(--la-surface);
+  border: 1px solid #cfcfcf;
+  padding: 1.25rem;
+  margin-block-end: var(--la-space);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout-main {
+  display: grid;
+  gap: var(--la-space);
+}
+
+@media (min-width: 56rem) {
+  .layout-main {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem);
+  }
+}
+
+.main-content {
+  min-width: 0;
+}
+
+.main-content > * {
+  max-width: var(--la-measure);
+}
+
+.main-content .views-element-container,
+.main-content .view,
+.main-content table,
+.main-content form {
+  max-width: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  color: var(--la-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-top: 0;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+p,
+li {
+  color: var(--la-muted);
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--la-text);
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--la-border);
+  background: var(--la-surface);
+  color: var(--la-text);
+  font: inherit;
+}
+
+button,
+.button,
+input[type="submit"] {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border: 2px solid var(--la-text);
+  background: var(--la-text);
+  color: var(--la-surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+  background: var(--la-link);
+  border-color: var(--la-link);
+}
+
+.form-item {
+  margin-block: 1rem;
+}
+
+.views-exposed-form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #cfcfcf;
+  background: #fafafa;
+}
+
+@media (min-width: 40rem) {
+  .views-exposed-form {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    align-items: end;
+  }
+}
+
+.views-table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.views-table th,
+.views-table td,
+table th,
+table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #cfcfcf;
+  word-break: break-word;
+}
+
+@media (max-width: 40rem) {
+  .views-table thead {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .views-table tr {
+    display: block;
+    border: 1px solid #cfcfcf;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+
+  .views-table td {
+    display: grid;
+    grid-template-columns: minmax(7rem, 35%) 1fr;
+    gap: 0.5rem;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  .views-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--la-text);
+  }
+}
+
+.library-status__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.library-status__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.library-status__name {
+  flex: 1 1 12rem;
+  color: var(--la-text);
+  font-weight: 700;
+}
+
+.library-status__state {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.library-status__state--available {
+  color: var(--la-available);
+}
+
+.library-status__state--unavailable {
+  color: var(--la-unavailable);
+}
+
+.library-status__fallback {
+  border: 2px solid var(--la-border);
+  padding: 1rem;
+  background: #fff8e8;
+  color: var(--la-text);
+}
+
+.messages {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--la-border);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.menu a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}

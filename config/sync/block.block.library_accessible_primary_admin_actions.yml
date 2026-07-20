@@ -1,0 +1,20 @@
+uuid: 4cd0b841-4251-4c7c-bb24-2c7dab6e8ebe
+langcode: en
+status: true
+dependencies:
+  theme:
+    - library_accessible
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: library_accessible_primary_admin_actions
+theme: library_accessible
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

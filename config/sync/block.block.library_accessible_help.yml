@@ -1,0 +1,22 @@
+uuid: 9db4256b-0e9a-43c7-9d05-1e64fcd9cfbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - library_accessible
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: library_accessible_help
+theme: library_accessible
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

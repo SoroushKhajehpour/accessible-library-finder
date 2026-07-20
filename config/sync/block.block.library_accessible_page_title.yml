@@ -1,0 +1,18 @@
+uuid: 00565692-a6e0-40f5-8c23-6e00e1ec66b7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - library_accessible
+id: library_accessible_page_title
+theme: library_accessible
+region: content
+weight: -20
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

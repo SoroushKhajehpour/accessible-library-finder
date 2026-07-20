@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Page layout for the Library Accessible theme.
+ */
+#}
+<div class="layout-container">
+  <header class="site-header" role="banner">
+    {{ page.header }}
+    {% if page.primary_menu %}
+      <nav class="primary-menu" aria-label="{{ 'Primary'|t }}">
+        {{ page.primary_menu }}
+      </nav>
+    {% endif %}
+  </header>
+
+  {% if page.breadcrumb %}
+    <div class="breadcrumb-region">
+      {{ page.breadcrumb }}
+    </div>
+  {% endif %}
+
+  {% if page.highlighted %}
+    <div class="highlighted-region">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
+
+  <div class="layout-main">
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      {{ page.content }}
+    </main>
+
+    {% if page.sidebar %}
+      <aside class="sidebar" role="complementary">
+        {{ page.sidebar }}
+      </aside>
+    {% endif %}
+  </div>
+
+  {% if page.footer %}
+    <footer class="site-footer" role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+</div>

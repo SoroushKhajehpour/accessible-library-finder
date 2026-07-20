@@ -1,0 +1,20 @@
+uuid: b529c13d-8b6b-43a7-a0ea-b87a94c05b7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - library_accessible
+id: library_accessible_messages
+theme: library_accessible
+region: highlighted
+weight: -20
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 713a032c-851d-4afb-8ffd-7fe46eb67235
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - library_accessible
+id: library_accessible_powered
+theme: library_accessible
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

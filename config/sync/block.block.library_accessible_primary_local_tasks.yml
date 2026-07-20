@@ -1,0 +1,22 @@
+uuid: 21da313a-954c-4263-8414-43086a48d5ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - library_accessible
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: library_accessible_primary_local_tasks
+theme: library_accessible
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

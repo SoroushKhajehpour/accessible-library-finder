@@ -1,0 +1,20 @@
+uuid: 92d3fab4-45a5-437f-9068-47f702578338
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - library_accessible
+id: library_accessible_content
+theme: library_accessible
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
