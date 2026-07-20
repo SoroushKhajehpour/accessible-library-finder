@@ -15,7 +15,7 @@
   --la-focus-ring: #ffbf47;
   --la-available: #0b5b2c;
   --la-unavailable: #8a1c1c;
-  --la-max-width: 68rem;
+  --la-max-width: 80rem;
   --la-measure: 65ch;
   --la-space: 1rem;
 }
@@ -130,17 +130,24 @@ a:focus {
 
 .main-content {
   min-width: 0;
+  overflow-x: auto;
 }
 
-.main-content > * {
+/* Keep long-form text readable without squeezing tables or Views. */
+.main-content .block-page-title-block,
+.main-content p,
+.main-content .library-status {
   max-width: var(--la-measure);
 }
 
 .main-content .views-element-container,
 .main-content .view,
+.main-content .view-content,
 .main-content table,
-.main-content form {
+.main-content form,
+.main-content .block-system-main-block {
   max-width: none;
+  width: 100%;
 }
 
 h1,
@@ -237,10 +244,16 @@ input[type="submit"]:hover {
   }
 }
 
+.view-content {
+  overflow-x: auto;
+}
+
 .views-table,
 table {
   width: 100%;
+  min-width: 48rem;
   border-collapse: collapse;
+  table-layout: auto;
 }
 
 .views-table th,
@@ -249,12 +262,32 @@ table th,
 table td {
   text-align: left;
   vertical-align: top;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.75rem;
   border-bottom: 1px solid #cfcfcf;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+.views-table th {
+  white-space: nowrap;
+}
+
+.views-table .views-field-title,
+.views-table .views-field-field-description {
+  min-width: 10rem;
+}
+
+.views-table .views-field-field-resource-url {
+  white-space: nowrap;
 }
 
 @media (max-width: 40rem) {
+  .views-table,
+  table {
+    min-width: 0;
+  }
+
   .views-table thead {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -277,12 +310,17 @@ table td {
     grid-template-columns: minmax(7rem, 35%) 1fr;
     gap: 0.5rem;
     border-bottom: 1px solid #e4e4e4;
+    white-space: normal;
   }
 
   .views-table td::before {
     content: attr(data-label);
     font-weight: 700;
     color: var(--la-text);
+  }
+
+  .views-table .views-field-field-resource-url {
+    white-space: normal;
   }
 }
 
