@@ -1,0 +1,5 @@
+name: 'Library Status'
+type: module
+description: 'Displays a sample external service status page for library resources.'
+package: Custom
+core_version_requirement: ^11

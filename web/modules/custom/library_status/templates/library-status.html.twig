@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for the library service status page.
+ *
+ * Available variables:
+ * - items: List of mapped status items with name and available keys.
+ * - error: TRUE when no status data could be loaded.
+ */
+#}
+<section class="library-status" aria-labelledby="library-status-heading">
+  <h2 id="library-status-heading">{{ 'Current service status'|t }}</h2>
+
+  {% if error %}
+    <p class="library-status__fallback" role="status">
+      {{ 'Service status is temporarily unavailable. Please try again later.'|t }}
+    </p>
+  {% else %}
+    <ul class="library-status__list">
+      {% for item in items %}
+        <li class="library-status__item">
+          <span class="library-status__name">{{ item.name }}</span>
+          {% if item.available %}
+            <span class="library-status__state library-status__state--available">{{ 'Available'|t }}</span>
+          {% else %}
+            <span class="library-status__state library-status__state--unavailable">{{ 'Unavailable'|t }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>

@@ -1,0 +1,10 @@
+services:
+  logger.channel.library_status:
+    parent: logger.channel_base
+    arguments: ['library_status']
+
+  library_status.status_client:
+    class: Drupal\library_status\Service\StatusClient
+    arguments:
+      - '@http_client'
+      - '@logger.channel.library_status'

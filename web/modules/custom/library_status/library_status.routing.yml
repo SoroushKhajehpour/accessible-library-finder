@@ -1,0 +1,7 @@
+library_status.page:
+  path: '/library-status'
+  defaults:
+    _controller: '\Drupal\library_status\Controller\LibraryStatusController::page'
+    _title: 'Library service status'
+  requirements:
+    _permission: 'access content'
