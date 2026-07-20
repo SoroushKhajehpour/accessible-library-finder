@@ -1,0 +1,21 @@
+uuid: 52591932-6034-4ff7-81c6-9350848b0205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_level
+    - node.type.library_resource
+  module:
+    - options
+id: node.library_resource.field_access_level
+field_name: field_access_level
+entity_type: node
+bundle: library_resource
+label: 'Access level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

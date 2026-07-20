@@ -1,0 +1,18 @@
+uuid: 35891261-a37d-4464-a8ce-70fc9c52f871
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Library Resource'
+type: library_resource
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

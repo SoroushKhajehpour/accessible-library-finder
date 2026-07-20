@@ -1,0 +1,29 @@
+uuid: d2ad12af-1222-47ac-a59f-00d6e1815b19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subject
+    - node.type.library_resource
+    - taxonomy.vocabulary.subjects
+id: node.library_resource.field_subject
+field_name: field_subject
+entity_type: node
+bundle: library_resource
+label: Subject
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subjects: subjects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

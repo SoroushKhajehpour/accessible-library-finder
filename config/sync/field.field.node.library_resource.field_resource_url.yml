@@ -1,0 +1,23 @@
+uuid: 5159c73a-4638-4829-ba21-1fe8e6446036
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_url
+    - node.type.library_resource
+  module:
+    - link
+id: node.library_resource.field_resource_url
+field_name: field_resource_url
+entity_type: node
+bundle: library_resource
+label: 'Resource URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
